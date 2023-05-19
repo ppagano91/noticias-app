@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import NoticiasContext from "../context/NoticiasContext";
+import NoticiasContext from "../context/NoticiasProvider";
 
 const useNoticias = () => {
   return useContext(NoticiasContext);
