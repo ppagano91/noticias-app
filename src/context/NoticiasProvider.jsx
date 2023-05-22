@@ -22,7 +22,9 @@ const NoticiasProvider = ({ children }) => {
     setCategoria(e.target.value);
   };
   return (
-    <NoticiasContext.Provider value={{ categoria, handleChangeCategoria }}>
+    <NoticiasContext.Provider
+      value={{ categoria, handleChangeCategoria, noticias }}
+    >
       {children}
     </NoticiasContext.Provider>
   );
