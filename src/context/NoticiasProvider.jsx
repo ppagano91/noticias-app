@@ -6,6 +6,8 @@ const NoticiasContext = createContext();
 const NoticiasProvider = ({ children }) => {
   const [categoria, setCategoria] = useState("general");
   const [noticias, setNoticias] = useState([]);
+  const [pagina, setPagina] = useState(1);
+  const [totalNoticias, setTotalNoticias] = useState(0);
 
   useEffect(() => {
     const consultarAPI = async () => {
@@ -14,6 +16,7 @@ const NoticiasProvider = ({ children }) => {
       const { data } = await axios(URL);
       console.log(data);
       setNoticias(data.articles);
+      setTotalNoticias(data.totalResults);
     };
     consultarAPI();
   }, [categoria]);
