@@ -20,7 +20,7 @@ const ListadoNoticias = () => {
       >
         Últimas noticias
       </Typography>
-      <Grid>
+      <Grid container spacing={2}>
         {noticias.map((noticia, index) => {
           return (
             <Noticia
